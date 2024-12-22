@@ -2,6 +2,7 @@ using Contact.Data.Models;
 using Contact.Repository.Interface;
 using Contact.Repository.Repository;
 using ContactsApp.Service;
+using ContactsApp.Utilities;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -14,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options =>
 {
+    options.Filters.Add(new HttpResponseExceptionFilter());
     options.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status500InternalServerError));
     options.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status400BadRequest));
     options.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status200OK));
