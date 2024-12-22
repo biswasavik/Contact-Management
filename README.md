@@ -1,6 +1,6 @@
-Contact Management Application
+<b>Contact Management Application</b>
 <br>
-Descption: This application is regarding contact management where user can see their contact information as well as they can add, update, delete contacts.
+<b>Descption:</b> This application is regarding contact management where user can see their contact information as well as they can add, update, delete contacts.
 <br>
 <b>Author-</b> Avik Biswas
 <br>
@@ -10,6 +10,11 @@ Descption: This application is regarding contact management where user can see t
 <br>
 ![AppUpdate](https://github.com/user-attachments/assets/adc97163-216c-41c8-8cb7-3cda3bfefdb4)
 <br>
-How to Run the application in local:
+<b>How to Run the application in local:</b>
 <br>
-UI: Open Visual studio code --> open terminal -->run command: ng serve
+UI: Open Visual studio code --> open terminal -->execute command: ng serve
+<br>
+API: In Visual Stuio click continue button(Make sure IIS is selected in lauch profile) or in command prompt run go to project location(eg: E:\MyPRojWork\ContactManagement\API\ContactsApp) and execute cmd--> dotnet run
+<br>
+
+
