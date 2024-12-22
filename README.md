@@ -12,9 +12,12 @@
 <br>
 <b>How to Run the application in local:</b>
 <br>
-UI: Open Visual studio code --> open terminal -->execute command: ng serve
+UI: Open Visual studio code --> open terminal --> execute command: ng serve
 <br>
 API: In Visual Stuio click continue button(Make sure IIS is selected in lauch profile) or in command prompt run go to project location(eg: E:\MyPRojWork\ContactManagement\API\ContactsApp) and execute cmd--> dotnet run
 <br>
-
+<b>Application Design:</b>
+<br>
+On the application landing page we can see all the contracts.
+Used contact component as a child component of AppComponent. Used contact component as a sharable component, which is used for both Create new contact and Update an existing contact.
 
