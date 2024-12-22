@@ -17,6 +17,7 @@ export class AppComponent implements OnInit, OnChanges {
   contacts: ContactData[] = [];
   contactInput: InputContactData;
   isShowContactForm:boolean=false;
+  isDataExists: boolean;
   constructor(private service: ContactService){}
 
   ngOnInit() {
@@ -30,8 +31,12 @@ export class AppComponent implements OnInit, OnChanges {
     this.service.getContacts().subscribe(data =>{
       if(data.status){
         this.contacts = data.result as ContactData[];
-        if(this.contacts.length === 0){
+        if(this.contacts.length == 0){
+          this.isDataExists=false;
           this.isShowContactForm=false;
+        }
+        else{
+          this.isDataExists=true;
         }
       }
     })
@@ -65,15 +70,5 @@ export class AppComponent implements OnInit, OnChanges {
     this.getContacts();
     }
   }
-
-
-  // convertToInputContact(data: any){
-  //   console.log(data);
-  //    this.contactInput.id = +data.id;
-  //    this.contactInput.firstName = data.firstName;
-  //    this.contactInput.lastName = data.lastName;
-  //    this.contactInput.email = data.email;
-  // }
-
 
 }

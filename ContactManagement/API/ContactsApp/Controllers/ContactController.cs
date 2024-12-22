@@ -34,18 +34,15 @@ namespace ContactsApp.Controllers
         [Route("CreateContact")]
         public async Task<IActionResult> Create(ContactData contact)
         {
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    return Ok(_repository.Create(contact));
-                }
-                catch (Exception ex)
-                {
-                    return BadRequest(ex.Message);
-                }
+                return Ok(_repository.Create(contact));
             }
-            return BadRequest();
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpPost]

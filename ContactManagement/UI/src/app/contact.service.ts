@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ContactData, EndPoints } from "./contact.model";
+import { environment } from "src/environments/environment";
 
 @Injectable({
     providedIn: 'root'
@@ -11,19 +12,19 @@ import { ContactData, EndPoints } from "./contact.model";
     constructor(private httpClient: HttpClient) { }
   
     public getContacts(): Observable<any>{
-      return this.httpClient.get(EndPoints.appUrl+EndPoints.getUrl);
+      return this.httpClient.get(environment.apiUrl+EndPoints.getUrl);
     }
 
     public postContacts(data: ContactData): Observable<any> {
-        return this.httpClient.post(EndPoints.appUrl+EndPoints.postUrl, data);
+        return this.httpClient.post(environment.apiUrl+EndPoints.postUrl, data);
     }
   
     public updateContacts(data: ContactData): Observable<any> {
-        return this.httpClient.post(EndPoints.appUrl+EndPoints.updateUrl, data);
+        return this.httpClient.post(environment.apiUrl+EndPoints.updateUrl, data);
     }
 
     public deleteContacts(id: number): Observable<any> {
-        return this.httpClient.delete(EndPoints.appUrl+EndPoints.deleteUrl+id);
+        return this.httpClient.delete(environment.apiUrl+EndPoints.deleteUrl+id);
     }
 
   }

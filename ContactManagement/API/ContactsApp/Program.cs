@@ -3,6 +3,7 @@ using Contact.Repository.Interface;
 using Contact.Repository.Repository;
 using ContactsApp.Service;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Text.Json;
@@ -11,20 +12,32 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
-    .AddJsonOptions(options=>
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status500InternalServerError));
+    options.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status400BadRequest));
+    options.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status200OK));
+})
+//.ConfigureApiBehaviorOptions(options =>
+//{
+//    options.SuppressModelStateInvalidFilter = true;
+//})
+ .AddJsonOptions(options=>
     {
-      options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-      options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
     });
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowCorsPolicy",
-        policy => policy.AllowAnyOrigin().SetIsOriginAllowed(origin => true)
+        policy => policy.WithOrigins(builder.Configuration["CorsSetting:Origin"])
+        .SetIsOriginAllowed(origin => true)
         .AllowAnyHeader().AllowAnyMethod().Build());
 });
 

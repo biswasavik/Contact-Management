@@ -25,6 +25,9 @@
               <td><button type="button" class="btn btn-primary"(click)="edit(item)">Edit</button></td>
               <td><button type="button" class="btn btn-danger" (click)="delete(item.id)">Delete</button></td>
             </tr>
+            <tr *ngIf="!isDataExists">
+              <td colspan="6" class="text-center">No Data Exists...</td>
+            </tr>
           </tbody>
         </table>
       </div>
