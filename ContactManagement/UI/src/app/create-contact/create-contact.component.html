@@ -1,0 +1,41 @@
+<div class="form-container">
+    <h5>{{contactInput.isUpdated ? 'Update Contact- '+contact.email : 'Create a new Contact'}}</h5>
+    <!-- <div class="alert alert-danger" role="alert" *ngIf="errorMessage"> <p>{{errorMessage}}</p> </div> -->
+    <div #errToast class="mb-4 mx-auto toast align-items-center text-white border-0" [ngClass]="isDataSumitted?'bg-success':'bg-danger'" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                {{isDataSumitted?'Data Submitted Successfully':errorMessage}}
+            </div>
+            <button type="button" (click)="show()" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    <form class="m-7 align-center" [formGroup]="contactForm">
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="inputEmail" formControlName="email">
+            <small *ngIf="contactForm.get('email').touched && contactForm.get('email').invalid && !contactForm.get('email').value" class="text-danger">Email address is required</small>
+            <small *ngIf="contactForm.get('email').invalid && contactForm.get('email').dirty && contactForm.get('email').value" class="text-danger">Please enter a valid email address</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName">
+            <small *ngIf="contactForm.get('firstName').touched && contactForm.get('firstName').invalid && !contactForm.get('firstName').value" class="text-danger">First Name is required</small>
+            <small *ngIf="contactForm.get('firstName').invalid && contactForm.get('firstName').dirty && contactForm.get('firstName').value" class="text-danger">First Name must be between 3 to 15 characters</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName">
+            <small *ngIf="contactForm.get('lastName').touched && contactForm.get('lastName').invalid && !contactForm.get('lastName').value" class="text-danger">Last Name is Required</small>
+            <small *ngIf="contactForm.get('lastName').invalid && contactForm.get('lastName').dirty && contactForm.get('lastName').value" class="text-danger">Last Name must be between 3 to 15 characters</small>
+        </div>
+        
+        <div>
+            <button type="button" class="btn btn-primary" style="margin-right: 8px;" [disabled]="!contactForm.valid" (click)="submitUserConactData()">{{contactInput.isUpdated ? 'Update' : 'Create'}}</button>
+            <button type="button" class="btn btn-danger" (click)="closeForm()">Close</button>
+        </div>
+    </form>
+</div>
+
+

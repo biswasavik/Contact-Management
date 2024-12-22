@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\MyPRojWork\\ContactManagement\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50C11036-BEF1-4F1A-81E3-E67264DF814E}|Contact.Data\\Contact.Data.csproj|e:\\myprojwork\\contactmanagement\\api\\contact.data\\models\\customexceptiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50C11036-BEF1-4F1A-81E3-E67264DF814E}|Contact.Data\\Contact.Data.csproj|solutionrelative:contact.data\\models\\customexceptiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|e:\\myprojwork\\contactmanagement\\api\\contactsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|solutionrelative:contactsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43664D2D-6224-4353-8003-5BF2AF31AB75}|Contact.Repository\\Contact.Repository.csproj|e:\\myprojwork\\contactmanagement\\api\\contact.repository\\repository\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43664D2D-6224-4353-8003-5BF2AF31AB75}|Contact.Repository\\Contact.Repository.csproj|solutionrelative:contact.repository\\repository\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|e:\\myprojwork\\contactmanagement\\api\\contactsapp\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|solutionrelative:contactsapp\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43664D2D-6224-4353-8003-5BF2AF31AB75}|Contact.Repository\\Contact.Repository.csproj|e:\\myprojwork\\contactmanagement\\api\\contact.repository\\service\\idataproviderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43664D2D-6224-4353-8003-5BF2AF31AB75}|Contact.Repository\\Contact.Repository.csproj|solutionrelative:contact.repository\\service\\idataproviderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|e:\\myprojwork\\contactmanagement\\api\\contactsapp\\wwwroot\\contactdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|solutionrelative:contactsapp\\wwwroot\\contactdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43664D2D-6224-4353-8003-5BF2AF31AB75}|Contact.Repository\\Contact.Repository.csproj|e:\\myprojwork\\contactmanagement\\api\\contact.repository\\service\\dataproviderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43664D2D-6224-4353-8003-5BF2AF31AB75}|Contact.Repository\\Contact.Repository.csproj|solutionrelative:contact.repository\\service\\dataproviderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|e:\\myprojwork\\contactmanagement\\api\\contactsapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E74F6CC-E145-48EF-8949-BE595D1B23CB}|ContactsApp\\ContactsApp.csproj|solutionrelative:contactsapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomExceptionData.cs",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Data\\Models\\CustomExceptionData.cs",
+              "RelativeDocumentMoniker": "Contact.Data\\Models\\CustomExceptionData.cs",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Data\\Models\\CustomExceptionData.cs",
+              "RelativeToolTip": "Contact.Data\\Models\\CustomExceptionData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T17:29:23.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IDataProviderService.cs",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Repository\\service\\IDataProviderService.cs",
+              "RelativeDocumentMoniker": "Contact.Repository\\service\\IDataProviderService.cs",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Repository\\service\\IDataProviderService.cs",
+              "RelativeToolTip": "Contact.Repository\\service\\IDataProviderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T16:50:52.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "contactData.json",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\wwwroot\\contactData.json",
+              "RelativeDocumentMoniker": "ContactsApp\\wwwroot\\contactData.json",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\wwwroot\\contactData.json",
+              "RelativeToolTip": "ContactsApp\\wwwroot\\contactData.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-19T16:29:03.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataProviderService.cs",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Repository\\service\\DataProviderService.cs",
+              "RelativeDocumentMoniker": "Contact.Repository\\service\\DataProviderService.cs",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Repository\\service\\DataProviderService.cs",
+              "RelativeToolTip": "Contact.Repository\\service\\DataProviderService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T16:10:26.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Repository\\Repository\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "Contact.Repository\\Repository\\ContactRepository.cs",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\Contact.Repository\\Repository\\ContactRepository.cs",
+              "RelativeToolTip": "Contact.Repository\\Repository\\ContactRepository.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T16:08:30.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ContactsApp\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ContactsApp\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-19T15:57:58.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "ContactsApp\\Controllers\\ContactController.cs",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "ContactsApp\\Controllers\\ContactController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAEwCMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T15:52:18.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\Program.cs",
+              "RelativeDocumentMoniker": "ContactsApp\\Program.cs",
+              "ToolTip": "E:\\MyPRojWork\\ContactManagement\\API\\ContactsApp\\Program.cs",
+              "RelativeToolTip": "ContactsApp\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T15:51:21.037Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
