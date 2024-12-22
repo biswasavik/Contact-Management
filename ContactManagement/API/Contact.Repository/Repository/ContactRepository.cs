@@ -50,6 +50,7 @@ namespace Contact.Repository.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.InnerException?.Message ?? ex.Message);
                 errors.Add(ex.InnerException?.Message ?? ex.Message);
                 responseModel.Status = false;
             }
@@ -81,6 +82,7 @@ namespace Contact.Repository.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.InnerException?.Message ?? ex.Message);
                 errors.Add(ex.InnerException?.Message ?? ex.Message);
                 responseModel.Status = false;
             }
@@ -102,6 +104,7 @@ namespace Contact.Repository.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.InnerException?.Message ?? ex.Message);
                 errors.Add(ex.InnerException?.Message ?? ex.Message);
                 responseModel.Status = false;
             }
@@ -145,6 +148,7 @@ namespace Contact.Repository.Repository
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.InnerException?.Message ?? ex.Message);
                 errors.Add(ex.InnerException?.Message ?? ex.Message);
                 responseModel.Status = false;
             }
