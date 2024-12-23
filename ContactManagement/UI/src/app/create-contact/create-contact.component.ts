@@ -1,10 +1,11 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactData,InputContactData } from '../contact.model';
 import {FormsModule,ReactiveFormsModule, FormControl, Validators, FormGroup } from '@angular/forms';
 import { ContactService } from '../contact.service';
 import { Observable, Subscription } from 'rxjs';
 import { Toast } from 'bootstrap';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-contact',
@@ -13,15 +14,16 @@ import { Toast } from 'bootstrap';
   templateUrl: './create-contact.component.html',
   styleUrls: ['./create-contact.component.css']
 })
-export class CreateContactComponent implements OnInit, OnChanges {
- @Input({required: true})contactInput: InputContactData;
- @Output() closeContactForm: EventEmitter<boolean> = new EventEmitter<boolean>();
+export class CreateContactComponent implements OnInit, OnDestroy {
+//  @Input({required: true})contactInput: InputContactData;
+//  @Output() closeContactForm: EventEmitter<boolean> = new EventEmitter<boolean>();
  @ViewChild('errToast',{static:true}) toastEl!: ElementRef<HTMLDivElement>;
 
+
  toast: Toast | null = null;
- contact: ContactData;
  errorMessage: string;
  isDataSumitted:boolean = false;
+ isUpdate: boolean;
  subscription: Subscription;
  observable: Observable<any>;
  contactForm: FormGroup = new FormGroup(
@@ -31,22 +33,23 @@ export class CreateContactComponent implements OnInit, OnChanges {
     lastName: new FormControl('',[Validators.required, Validators.maxLength(15),Validators.minLength(3)]),
   });
 
- constructor(private service: ContactService){}
+ constructor(private service: ContactService, 
+  public dialogRef: MatDialogRef<any>,
+  @Inject(MAT_DIALOG_DATA) public data: any
+ ){}
 
  ngOnInit(): void {
   this.toast = new Toast(this.toastEl.nativeElement,{});
+  this.loadFormData();
  }
 
- ngOnChanges(): void {
-  console.log('ngOnChanges()');
-  this.contact = this.contactInput as ContactData;
-  if(this.contactInput.isUpdated){
-     this.loadContorlsData();
-  }
-  else{
-    this.contact= new ContactData();
-    this.contactForm.reset();
-  }
+ loadFormData(){
+    if(this.data.isUpdate && this.data.contact != null){
+      this.loadContorlsData(this.data.contact as ContactData);
+    }
+    else{
+      this.contactForm.reset();
+    }  
  }
 
 show(){
@@ -58,8 +61,8 @@ show(){
     return;
   }
   let data = this.contactForm.value as ContactData;
-   if(this.contactInput.isUpdated){
-    data.id=this.contact.id;
+   if(this.data.isUpdate && this.data.contact != null){
+     data.id=this.data.contact.id;
      this.observable = this.service.updateContacts(data);
    }
    else{
@@ -70,10 +73,11 @@ show(){
     if(data.status){
        this.contactForm.reset();
        this.isDataSumitted = true;
+      this.service.dataSubmmited.next(true);
       // this.closeContactForm.emit(true);
-       setTimeout(() => {
-        this.closeContactForm.emit(true);
-       }, 2000);
+      //  setTimeout(() => {
+      //   this.
+      //  }, 2000);
     }
     else{
        this.errorMessage = data.errors[0];
@@ -94,18 +98,19 @@ show(){
  }
 
 closeForm(){
-  console.log('close form works');
-  this.closeContactForm.emit(false);
+  this.dialogRef.close();
 }
 
-
- loadContorlsData(){
-  console.log('loadContorlsData');
+ loadContorlsData(contact: ContactData){
+  console.log('loadContorlsData',contact);
   this.contactForm.setValue({
-    firstName: this.contact.firstName,
-    lastName: this.contact.lastName,
-    email: this.contact.email
+    firstName: contact.firstName,
+    lastName: contact.lastName,
+    email: contact.email
   });
  }
  
+ ngOnDestroy(): void {
+   this.subscription?.unsubscribe();
+ }
 }

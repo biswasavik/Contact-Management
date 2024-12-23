@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { ContactData, EndPoints } from "./contact.model";
 import { environment } from "src/environments/environment";
 
@@ -10,7 +10,9 @@ import { environment } from "src/environments/environment";
   export class ContactService {
   
     constructor(private httpClient: HttpClient) { }
-  
+   
+    dataSubmmited: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
     public getContacts(): Observable<any>{
       return this.httpClient.get(environment.apiUrl+EndPoints.getUrl);
     }
