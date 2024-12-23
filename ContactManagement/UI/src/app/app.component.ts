@@ -1,8 +1,11 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { CreateContactComponent } from './create-contact/create-contact.component';
 import { ContactData,InputContactData } from './contact.model';
 import { ContactService } from './contact.service';
 import { CommonModule } from '@angular/common';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -10,30 +13,29 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports:[CreateContactComponent,CommonModule]
+  imports:[CreateContactComponent,CommonModule,MatDialogModule]
 })
-export class AppComponent implements OnInit, OnChanges {
+export class AppComponent implements OnInit, OnDestroy{
   title = 'Contacts App';
   contacts: ContactData[] = [];
   contactInput: InputContactData;
-  isShowContactForm:boolean=false;
   isDataExists: boolean;
-  constructor(private service: ContactService){}
+  subscription: Subscription;
+  constructor(private service: ContactService, private dialog: MatDialog){}
 
   ngOnInit() {
-    this.getContacts();
+    this.loadContacts();
+    this.subscription=this.service.dataSubmmited.subscribe(data =>{
+       if(data){this.loadContacts();}
+    });
   }
 
-  ngOnChanges(){
-  
-  }
-  getContacts(){
-    this.service.getContacts().subscribe(data =>{
+  loadContacts(){
+    this.subscription=this.service.getContacts().subscribe(data =>{
       if(data.status){
         this.contacts = data.result as ContactData[];
         if(this.contacts.length == 0){
           this.isDataExists=false;
-          this.isShowContactForm=false;
         }
         else{
           this.isDataExists=true;
@@ -43,32 +45,36 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   edit(data: any){
-    this.contactInput = data as InputContactData;
-    this.contactInput.isUpdated = true;
-    console.log('data',data);
-    this.isShowContactForm=true;
+    this.openDialog({isUpdate:true, contact:data});
   }
 
   create(){
-    this.contactInput= new InputContactData();
-    this.contactInput.isUpdated = false;
-    this.isShowContactForm=true;
+    console.log('calling create..');
+    this.openDialog({isUpdate:false});
   }
 
   delete(id:number){
-    this.service.deleteContacts(id).subscribe(data=>{
+    this.subscription=this.service.deleteContacts(id).subscribe(data=>{
       if(data.status){
-        this.getContacts();
+        this.loadContacts();
       }
     });
   }
 
-  closeContactForm(data:any){
-    console.log('calling app close',data);
-    this.isShowContactForm = false;
-    if(data){
-    this.getContacts();
-    }
+  openDialog(data:{isUpdate:boolean, contact?: ContactData}){
+    const  dialogRef = this.dialog.open(CreateContactComponent,{
+      width: '410px',
+      height: '420px',
+      data: data
+    });
+    
+   this.subscription=dialogRef.afterClosed().subscribe(response=>{
+    });
+     
+  }
+
+  ngOnDestroy(): void {
+     this.subscription?.unsubscribe();
   }
 
 }
