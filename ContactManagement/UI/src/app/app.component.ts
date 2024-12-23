@@ -64,7 +64,7 @@ export class AppComponent implements OnInit, OnDestroy{
   openDialog(data:{isUpdate:boolean, contact?: ContactData}){
     const  dialogRef = this.dialog.open(CreateContactComponent,{
       width: '410px',
-      height: '420px',
+      height: '430px',
       data: data
     });
     
