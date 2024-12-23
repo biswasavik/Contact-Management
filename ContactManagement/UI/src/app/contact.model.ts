@@ -10,7 +10,6 @@ export class ContactData{
 }
 
 export class EndPoints{
-    // public static appUrl="https://localhost:44310/";
     public static getUrl="api/GetContacts";
     public static postUrl="api/CreateContact";
     public static updateUrl="api/UpdateContact";
